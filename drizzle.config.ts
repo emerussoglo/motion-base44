@@ -1,0 +1,15 @@
+import * as dotenv from "dotenv";
+import { defineConfig } from "drizzle-kit";
+
+// Force le chargement des variables depuis le fichier .env.local de Next.js
+dotenv.config({ path: ".env.local" });
+
+export default defineConfig({
+  schema: "./src/lib/schema.ts",
+  out: "./drizzle",
+  dialect: "turso",
+  dbCredentials: {
+    url: process.env.TURSO_DATABASE_URL || "",
+    authToken: process.env.TURSO_AUTH_TOKEN || "",
+  },
+});
