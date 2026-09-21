@@ -1,4 +1,5 @@
 // Legacy experimental Motion Canvas adapter. The production API uses node-renderer.ts.
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-nocheck
 import fs from "fs";
 import path from "path";
@@ -10,15 +11,7 @@ import {
   Renderer as MotionRenderer,
   Vector2,
 } from "@motion-canvas/core";
-import {
-  makeScene2D,
-  Circle,
-  Rect,
-  Txt,
-  Node,
-  Layout,
-  Img,
-} from "@motion-canvas/2d";
+import { makeScene2D, Circle, Rect, Txt, Node, Img } from "@motion-canvas/2d";
 import { spawn } from "child_process";
 import { motionProjectSpecificationSchema } from "@/lib/validation/motion-schema";
 import type {
